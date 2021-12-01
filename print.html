@@ -76,7 +76,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="relax-utils.html"><strong aria-hidden="true">1.</strong> Relax Utils</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.</strong> Relax Ascii</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.</strong> Relax Hints</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.</strong> Relax Timer</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">5.</strong> Relax Json</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.</strong> Relax Authentic</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">7.</strong> Relax Refine</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">8.</strong> Relax Spring Toolkits</div></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="relax-utils/index.html"><strong aria-hidden="true">1.</strong> Relax Utils</a></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">1.1.</strong> Tuple</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">1.2.</strong> Triplet</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">1.3.</strong> Result</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">1.4.</strong> Function</div></li><li class="chapter-item expanded "><a href="relax-utils/require.html"><strong aria-hidden="true">1.5.</strong> Require</a></li><li class="chapter-item expanded "><a href="relax-utils/resources.html"><strong aria-hidden="true">1.6.</strong> Resources</a></li><li class="chapter-item expanded "><a href="relax-utils/hash.html"><strong aria-hidden="true">1.7.</strong> Hash</a></li><li class="chapter-item expanded "><a href="relax-utils/encoder.html"><strong aria-hidden="true">1.8.</strong> Encoder</a></li><li class="chapter-item expanded "><a href="relax-utils/network.html"><strong aria-hidden="true">1.9.</strong> Network</a></li><li class="chapter-item expanded "><a href="relax-utils/shutdown.html"><strong aria-hidden="true">1.10.</strong> Shutdown</a></li><li class="chapter-item expanded "><a href="relax-utils/loggable.html"><strong aria-hidden="true">1.11.</strong> Loggable</a></li><li class="chapter-item expanded "><a href="relax-utils/durations.html"><strong aria-hidden="true">1.12.</strong> Durations</a></li><li class="chapter-item expanded "><a href="relax-utils/datetimes.html"><strong aria-hidden="true">1.13.</strong> Datetimes</a></li><li class="chapter-item expanded "><a href="relax-utils/datasize.html"><strong aria-hidden="true">1.14.</strong> DataSize</a></li><li class="chapter-item expanded "><a href="relax-utils/objectsize.html"><strong aria-hidden="true">1.15.</strong> ObjectSize</a></li><li class="chapter-item expanded "><a href="relax-utils/futures.html"><strong aria-hidden="true">1.16.</strong> Futures</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">1.17.</strong> Threads</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">1.18.</strong> Pool</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">1.19.</strong> Timer</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">1.20.</strong> Scheduler</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">1.21.</strong> ParallelStream</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">2.</strong> Relax Ascii</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.</strong> Relax Hints</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.</strong> Relax Timer</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">5.</strong> Relax Json</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.</strong> Relax Authentic</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">7.</strong> Relax Refine</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">8.</strong> Relax Spring Toolkits</div></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -136,6 +136,264 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="relax-utils"><a class="header" href="#relax-utils">Relax Utils</a></h1>
+<blockquote>
+<p>Check <a href="https://github.com/infilow/relax-utils/releases">Github release</a> to get the latest version.</p>
+</blockquote>
+<pre><code class="language-xml">&lt;dependency&gt;
+    &lt;groupId&gt;com.infilos&lt;/groupId&gt;
+    &lt;artifactId&gt;relax-utils&lt;/artifactId&gt;
+    &lt;version&gt;0.8.0&lt;/version&gt;
+&lt;/dependency&gt;
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="require"><a class="header" href="#require">Require</a></h1>
+<p>类似 Guava 的 <code>Precondition.checkArgument</code>，避免引入 Guava。</p>
+<p>同时提供了一些常见的检查类型，校验条件失败时抛出 <code>IllegalArgumentException</code> 异常。</p>
+<pre><code class="language-java">Require.check(1==2);
+Require.check(1==2, &quot;1 not equals 2&quot;);
+Require.check(1==2, &quot;%d not equals %d&quot;, 1, 2);
+
+Require.checkNotNull(object);
+Require.checkNotNull(object, &quot;object must not be null&quot;);
+Require.checkNotNull(object), &quot;object named %s must not be null&quot;, name);
+
+Require.checkNotBlank(string);
+Require.checkNotBlank(string, &quot;string must not be blank&quot;);
+Require.checkNotBlank(string), &quot;string named %s must not be blank&quot;, name);
+
+Require.checkNotEmpty(collectionOrArray);
+Require.checkNotEmpty(collectionOrArray, &quot;collection must not be empty&quot;);
+Require.checkNotEmpty(collectionOrArray), &quot;collection named %s must not be empty&quot;, name);
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="resource"><a class="header" href="#resource">Resource</a></h1>
+<p>用于读取或写入 <code>src/main/resources</code> 或 <code>src/test/resources</code> 下的文件。</p>
+<blockquote>
+<p>注意：文件路径仅包含 <code>resources</code> 之后的部分，<code>/</code> 可以省略。</p>
+</blockquote>
+<pre><code class="language-java">File file = Resource.readAsFile(&quot;/config.json&quot;);
+InputStream inputStream = Resource.readAsStream(&quot;/config.json&quot;);
+List&lt;String&gt; lines = Resource.readAsLines(&quot;/config.json&quot;);
+String string = Resource.readAsString(&quot;/config.json&quot;);
+byte[] bytes = Resource.readAsBytes(&quot;/config.json&quot;);
+
+// File would appear in &quot;/target/classes&quot; or &quot;/target/test-classes&quot;.
+File writed = Resource.writeResource(&quot;/config-updated.json&quot;, updatedBytes);
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="hash"><a class="header" href="#hash">Hash</a></h1>
+<p>用于生成不同位数的哈希值。</p>
+<h2 id="string-32"><a class="header" href="#string-32">string 32</a></h2>
+<pre><code class="language-java">String key = &quot;test&quot;;
+int seed = 123;
+Hash.hash32(key.getBytes(), key.getBytes().length, seed);
+</code></pre>
+<h2 id="int-32"><a class="header" href="#int-32">int 32</a></h2>
+<pre><code class="language-java">byte[] data = ByteBuffer.allocate(4).putInt(1122).array();
+Hash.hash32(data, data.length, seed);
+</code></pre>
+<h2 id="long-32"><a class="header" href="#long-32">long 32</a></h2>
+<pre><code class="language-java">byte[] data = ByteBuffer.allocate(8).putLong(3344L).array();
+Hash.hash32(data, data.length, seed);
+</code></pre>
+<h2 id="double-32"><a class="header" href="#double-32">double 32</a></h2>
+<pre><code class="language-java">byte[] data = ByteBuffer.allocate(8).putDouble(3344D).array();
+Hash.hash32(data, data.length, seed);
+</code></pre>
+<h2 id="string-64"><a class="header" href="#string-64">string 64</a></h2>
+<pre><code class="language-java">byte[] origin = &quot;value&quot;.getBytes();
+Hash.hash64(origin, 0, origin.length);
+</code></pre>
+<h2 id="string-128"><a class="header" href="#string-128">string 128</a></h2>
+<pre><code class="language-java">String key = &quot;test&quot;;
+int seed = 123;
+Hash.hash128(key.getBytes(), 0, key.getBytes().length, seed);
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="encoder"><a class="header" href="#encoder">Encoder</a></h1>
+<p>用于计算 MD5、Base64、进制转换，避免每次重复编写。进制转换在一些场景中用于缩短数值型字符串的长度。</p>
+<pre><code class="language-java">Encoder.md5(&quot;string&quot;);
+
+Encoder.asBase64(&quot;string&quot;);
+Encoder.ofBase64(&quot;MTU2MTk0NzU3MDYx00==&quot;);
+
+String b62 = Encoder.decimalToNumeric(1561947570614L, 62);
+System.out.println(b62);            // ruW0PlQ
+System.out.println(b62.length());   // 7
+
+long str = Encoder.numericToDecimal(b62, 62);
+assertEquals(1561947570614L, str);
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="network"><a class="header" href="#network">Network</a></h1>
+<p>获取本机 IP 地址。</p>
+<pre><code class="language-java">String localhost = Network.LocalHost;
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="shutdown"><a class="header" href="#shutdown">Shutdown</a></h1>
+<p>用于注册 JVM 关闭时的回调函数。如果需要处理的逻辑较多且有前后依赖，则难于管理。</p>
+<ul>
+<li><code>order</code> 参数用于设置执行顺序，值较小的回调更早执行。</li>
+<li><code>order</code> 值不能重复使用。</li>
+<li>其中一个回调函数报错不影响其他函数的执行。</li>
+</ul>
+<pre><code class="language-java">Shutdown.setup(1, () -&gt; System.out.println(&quot;hook 1&quot;));
+Shutdown.setup(2, () -&gt; System.out.println(&quot;hook 2&quot;));
+
+Shutdown.isShutingdown();
+Shutdown.remove(runnable);
+Shutdown.contains(runnable);
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="loggable"><a class="header" href="#loggable">Loggable</a></h1>
+<p>基于 slf4j-api 获取当前类的 <code>Logger</code> 实例，避免手动创建。</p>
+<pre><code class="language-java">public class Service implements Loggable {
+    
+    public void execute() {
+        log().info(&quot;start execute...&quot;);
+    }
+}
+</code></pre>
+<p>同时可以切换日志级别：</p>
+<pre><code class="language-java">Loggable.switchRootLevel(Level.ERROR);
+
+Loggable.switchLoggerLevel(&quot;com.infilos&quot;, Level.ERROR);
+
+Loggable.loggers().forEach(logger -&gt; System.out.println(logger.getName()));
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="durations"><a class="header" href="#durations">Durations</a></h1>
+<p>解析表示时间间隔的字符串。<code>Duration</code> 的默认格式中包含一些特殊字符，该方法会自动补充这些字符，以简化应用过程。</p>
+<pre><code class="language-java">/*
+ * Y: year
+ * M: month
+ * D: day
+ * H: hour
+ * M: minute
+ * S: second
+ */
+Duration duration = Durations.parse(&quot;1d2h3s&quot;);
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="datetimes"><a class="header" href="#datetimes">Datetimes</a></h1>
+<p>日期时间操作方法。</p>
+<pre><code class="language-java">Datetimes.nowInMills();
+Datetimes.nowInNanos();
+Datetimes.nowInMillsOfNano();
+Datetimes.now();
+Datetimes.from(&quot;1942&quot;, Datetimes.Patterns.AtYears);
+Datetimes.from(&quot;1980-01&quot;, Datetimes.Patterns.AtMonths);
+Datetimes.from(&quot;1980-11-01&quot;, Datetimes.Patterns.AtDays);
+Datetimes.from(&quot;1980-11-01 18&quot;, Datetimes.Patterns.AtHours);
+Datetimes.from(&quot;1980-11-01 18:42&quot;, Datetimes.Patterns.AtMinutes);
+Datetimes.from(&quot;1980-11-01 18:42:33&quot;, Datetimes.Patterns.AtSeconds);
+Datetimes.from(1638363075578L);
+Datetimes.asMills(localdatetime);
+Datetimes.asSeconds(localdatetime);
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="datasize"><a class="header" href="#datasize">DataSize</a></h1>
+<p>数据大小的可读表示。</p>
+<pre><code class="language-java">DataSize.ofSuccinct(123).toString();                                    // 123B
+DataSize.ofSuccinct(Double.valueOf(5.5 * 1024).longValue()).toString(); // 5.50kB
+DataSize.ofSuccinct(3L * 1024 * 1024).toString();                       // 3MB
+DataSize.ofSuccinct(3L * 1024 * 1024 * 1024).toString();                // 3GB
+DataSize.ofSuccinct(3L * 1024 * 1024 * 1024 * 1024).toString();         // 3TB
+DataSize.ofSuccinct(3L * 1024 * 1024 * 1024 * 1024 * 1024).toString();  // 3PB
+</code></pre>
+<pre><code class="language-java">DataSize.of(1234);
+DataSize.parse(&quot;1234&quot;);
+DataSize.parse(&quot;1234B&quot;);
+DataSize.parse(&quot;1234kB&quot;);
+DataSize.parse(&quot;1234MB&quot;);
+DataSize.parse(&quot;1234GB&quot;);
+DataSize.parse(&quot;1234TB&quot;);
+DataSize.parse(&quot;1234PB&quot;);
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="objectsize"><a class="header" href="#objectsize">ObjectSize</a></h1>
+<p>计算 Java 对象大小。</p>
+<pre><code class="language-java">ObjectSize.ofMaxJvmHeap();
+ObjectSize.ofUsedJvmHeap();
+ObjectSize.ofFreeJvmHeap();
+ObjectSize.of(object);
+</code></pre>
+<p>可以结合 DataSize 使用：</p>
+<pre><code class="language-java">DataSize.ofSuccinct(ObjectSize.of(object)).toString();  
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="futures"><a class="header" href="#futures">Futures</a></h1>
+<h2 id="合并"><a class="header" href="#合并">合并</a></h2>
+<p>CompletableFuture 内置 API 提供了 <code>future.thenCombine(otherFuture, function)</code> 用于结合两个 Future，Futures 提供了如下 API 用于同时结合更多的 Future。</p>
+<h3 id="futuresoflist"><a class="header" href="#futuresoflist">Futures.ofList</a></h3>
+<pre><code class="language-java">List&lt;CompletableFuture&lt;String&gt;&gt; futures = asList(completedFuture(&quot;a&quot;), completedFuture(&quot;b&quot;));
+CompletableFuture&lt;List&lt;String&gt;&gt; joined = Futures.ofList(futures);
+</code></pre>
+<h3 id="futuresofmap"><a class="header" href="#futuresofmap">Futures.ofMap</a></h3>
+<pre><code class="language-java">Map&lt;String, CompletableFuture&lt;String&gt;&gt; futures = new HashMap&lt;&gt;() {{
+    put(&quot;key&quot;, completedFuture(&quot;value&quot;));
+}};
+CompletableFuture&lt;Map&lt;String, String&gt;&gt; joined = Futures.ofMap(futures);
+</code></pre>
+<h3 id="futuresofsuccedlist"><a class="header" href="#futuresofsuccedlist">Futures.ofSuccedList</a></h3>
+<p>与 <code>Futures.ofList</code> 类似，但如果其中一个 Future 失败时，并不会导致 join 失败，而是由 <code>defaultValueMapper</code> 为失败的 Future 提供一个默认值。该默认值可以任意设置，可以使 <code>null</code> 或 <code>Optional.empty()</code>。</p>
+<pre><code class="language-java">List&lt;CompletableFuture&lt;String&gt;&gt; input = Arrays.asList(
+    completedFuture(&quot;a&quot;),
+    exceptionallyCompletedFuture(new RuntimeException(&quot;boom&quot;))
+);
+CompletableFuture&lt;List&lt;String&gt;&gt; joined = Futures.ofSuccedList(input, t -&gt; &quot;default&quot;);
+</code></pre>
+<h3 id="futurejoinlist"><a class="header" href="#futurejoinlist">Future.joinList</a></h3>
+<p>Stream Collector，当为列表中的每个元素应用异步操作时，可以直接将结果收集为一个列表。</p>
+<pre><code class="language-java">collection.stream()
+    .map(this::someAsyncFunction)
+    .collect(CompletableFutures.joinList())
+    .thenApply(this::consumeList)
+</code></pre>
+<h3 id="futuresjoinmap"><a class="header" href="#futuresjoinmap">Futures.joinMap</a></h3>
+<p>与 <code>Future.joinList</code> 类似，应用于 Map 结构。</p>
+<pre><code class="language-java">collection.stream()
+    .collect(joinMap(this::toKey, this::someAsyncFunc))
+    .thenApply(this::consumeMap)
+</code></pre>
+<h3 id="futurescombine"><a class="header" href="#futurescombine">Futures.combine</a></h3>
+<p>用于合并多个不同类型的 Future。</p>
+<pre><code class="language-java">CompletableFutures.combine(f1, f2, (a, b) -&gt; a + b);
+CompletableFutures.combine(f1, f2, f3, (a, b, c) -&gt; a + b + c);
+CompletableFutures.combine(f1, f2, f3, f4, (a, b, c, d) -&gt; a + b + c + d);
+CompletableFutures.combine(f1, f2, f3, f4, f5, (a, b, c, d, e) -&gt; a + b + c + d + e);
+</code></pre>
+<h3 id="futurescombinefutures"><a class="header" href="#futurescombinefutures">Futures.combineFutures</a></h3>
+<p>用于将多个不同类型的 Future 合并为一个新的 Future。</p>
+<pre><code class="language-java">CompletableFutures.combineFutures(f1, f2, (a, b) -&gt; completedFuture(a + b));
+CompletableFutures.combineFutures(f1, f2, f3, (a, b, c) -&gt; completedFuture(a + b + c));
+CompletableFutures.combineFutures(f1, f2, f3, f4, (a, b, c, d) -&gt; completedFuture(a + b + c + d));
+CompletableFutures.combineFutures(f1, f2, f3, f4, f5, (a, b, c, d, e) -&gt; completedFuture(a + b + c + d + e));
+</code></pre>
+<h3 id="futurescombinefunction-vararg"><a class="header" href="#futurescombinefunction-vararg">Futures.combine(function, vararg)</a></h3>
+<p>如果需要合并多于 6 个 Future，使用该多变量参数版本的 <code>combine</code> 方法。第一个函数用于结果多个 Future 的值，这种方式使得求值过程从合并过程中分离。</p>
+<pre><code class="language-java">CompletionStage&lt;String&gt; f1;
+CompletionStage&lt;String&gt; f2;
+CompletionStage&lt;String&gt; result = combine(combined -&gt; combined.get(f1) + combined.get(f2), f1, f2);
+</code></pre>
+<h3 id="futurescombinefuturesfunction-vararg"><a class="header" href="#futurescombinefuturesfunction-vararg">Futures.combineFutures(function, vararg)</a></h3>
+<p>类似于 <code>Futures.combine(function, vararg)</code>。</p>
+<pre><code class="language-java">CompletionStage&lt;String&gt; f1;
+CompletionStage&lt;String&gt; f2;
+CompletionStage&lt;String&gt; result = dereference(combine(combined -&gt; completedFuture(combined.get(f1) + combined.get(f2)), f1, f2));
+</code></pre>
+<h2 id="调度"><a class="header" href="#调度">调度</a></h2>
+<p>如果有一个长时间轮询以从外部获取资源的接口，可以将其转换为一个 Future。</p>
+<pre><code class="language-java">Supplier&lt;Optional&lt;T&gt;&gt; pollingTask = () -&gt; Optional.ofNullable(resource.result());
+Duration frequency = Duration.ofSeconds(2);
+CompletableFuture&lt;T&gt; result = CompletableFutures.poll(pollingTask, frequency, executor);
+</code></pre>
+<h2 id="工具"><a class="header" href="#工具">工具</a></h2>
+<h3 id="futureshandlecompose"><a class="header" href="#futureshandlecompose">Futures.handleCompose</a></h3>
+<p>类似于 <code>CompletableFuture.handle</code>，但可以返回一个新的 <code>CompletionStage</code>，而非直接返回一个值。</p>
+<pre><code class="language-java">CompletionStage&lt;String&gt; composed = handleCompose(future, (value, throwable) -&gt; completedFuture(&quot;hello&quot;));
+</code></pre>
+<h3 id="futuresexceptionallycompose"><a class="header" href="#futuresexceptionallycompose">Futures.exceptionallyCompose</a></h3>
+<p>类似于 <code>CompletableFuture.exceptionally</code>，返回新的 <code>CompletionStage</code>。</p>
+<pre><code class="language-java">CompletionStage&lt;String&gt; composed = CompletableFutures.exceptionallyCompose(future, throwable -&gt; completedFuture(&quot;fallback&quot;));
+</code></pre>
+<h3 id="futuresdereference"><a class="header" href="#futuresdereference">Futures.dereference</a></h3>
+<p>将 <code>CompletionStage&lt;CompletionStage&lt;T&gt;&gt;</code> 解包为 <code>CompletionStage&lt;T&gt;</code>。</p>
+<pre><code class="language-java">CompletionStage&lt;CompletionStage&lt;String&gt;&gt; wrapped = completedFuture(completedFuture(&quot;hello&quot;));
+CompletionStage&lt;String&gt; unwrapped = CompletableFutures.dereference(wrapped);
+</code></pre>
+<h3 id="futuresoffailed"><a class="header" href="#futuresoffailed">Futures.ofFailed</a></h3>
+<p>创建一个已经失败的 Future。</p>
+<pre><code class="language-java">return CompletableFutures.ofFailed(new RuntimeException(&quot;boom&quot;));
+</code></pre>
 
                     </main>
 
