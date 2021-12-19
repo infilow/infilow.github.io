@@ -19,6 +19,7 @@ Welcome to Relax Stack!
   - [Datetimes](relax-utils/datetimes.md)
   - [DataSize](relax-utils/datasize.md)
   - [ObjectSize](relax-utils/objectsize.md)
+  - [ObjectDiffer](relax-utils/differ.md)
   - [Futures](relax-utils/futures.md)
   - [Threads](relax-utils/threads.md)
   - [Pool](relax-utils/pool.md)
