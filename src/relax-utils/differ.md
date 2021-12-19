@@ -4,7 +4,7 @@
 
 1. 如果两者是基本类型，则直接使用 `Object.equals` 执行对比。
 2. 如果两者是集合类型，则直接使用 `Object.deepEquals` 执行对比。
-3. 否则，基于 Getter 或 Field 选择，通过反射后去属性值，执行对比。
+3. 否则，基于 Getter 或 Field 选择，通过反射获取属性值，执行对比。
 4. 支持对比不同类型的对象，默认仅对比二者共有的属性。
 
 > `Arrays.deepEquals` looks really deep. From the source, we could understand that Arrays.deepEquals:
