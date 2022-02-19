@@ -151,7 +151,7 @@ public static Refined<String> IsAlpha = new Refined<String>() {
 
   @Override
   public RefineResult check(String name, String value) {
-    if (/*Your Check Logic*/StringUtils.isAlpha(value)) {
+    if (/*The Check Logic*/StringUtils.isAlpha(value)) {
 			return RefineResult.succed(name, value, this);
 		}
 

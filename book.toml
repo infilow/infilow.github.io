@@ -5,3 +5,25 @@ language = "en"
 multilingual = false
 src = "src"
 
+[output.html]
+default-theme = "ayu"
+additional-css = ["theme/pagetoc.css"]
+additional-js = ["theme/pagetoc.js"]
+enable = false
+level = 1
+
+[output.html.print]
+enable = false
+
+[preprocessor.theme]
+pagetoc = true
+content-max-width = "75%"
+content-main-margin-left = "5%"
+content-main-margin-right = "5%"
+sidebar-width = "250px"
+root-font-size = "70%"
+sidebar-font-size = "0.85em"
+
+[build]
+create-missing = true
+build-dir = "book"
