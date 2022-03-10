@@ -28,6 +28,10 @@ jobs:
                | wget -qi -
           tar -xvzf mdbook-theme_linux.tar.gz
           echo $PWD >> $GITHUB_PATH
+          
+      - name: Setup mdbook-toc latest
+        run: |
+          cargo install mdbook-toc
 
       - run: |
           mdbook build

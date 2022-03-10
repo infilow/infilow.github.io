@@ -1,5 +1,7 @@
 # Relax Refine
 
+<!-- toc -->
+
 > Check [Github release](https://github.com/infilow/relax-refine/releases) to get the latest version.
 
 ```xml

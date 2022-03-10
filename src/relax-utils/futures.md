@@ -1,5 +1,7 @@
 # Futures
 
+<!-- toc -->
+
 ## 合并
 
 CompletableFuture 内置 API 提供了 `future.thenCombine(otherFuture, function)` 用于结合两个 Future，Futures 提供了如下 API 用于同时结合更多的 Future。

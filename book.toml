@@ -7,8 +7,8 @@ src = "src"
 
 [output.html]
 default-theme = "ayu"
-additional-css = ["theme/pagetoc.css"]
-additional-js = ["theme/pagetoc.js"]
+#additional-css = ["theme/pagetoc.css"]
+#additional-js = ["theme/pagetoc.js"]
 enable = false
 level = 1
 
@@ -16,7 +16,7 @@ level = 1
 enable = false
 
 [preprocessor.theme]
-pagetoc = true
+#pagetoc = true
 content-max-width = "75%"
 content-main-margin-left = "5%"
 content-main-margin-right = "5%"
@@ -24,6 +24,10 @@ sidebar-width = "250px"
 root-font-size = "70%"
 sidebar-font-size = "0.85em"
 
+[preprocessor.toc]
+command = "mdbook-toc"
+renderer = ["html"]
+
 [build]
-create-missing = true
+create-missing = false
 build-dir = "book"

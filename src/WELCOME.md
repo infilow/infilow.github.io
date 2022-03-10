@@ -1,9 +1,9 @@
-# SUMMARY
+# Welcome
 
 Welcome to the Relax Stack!
 
 - [Relax Stack](WELCOME.md)
-- [Relax Utils](relax-utils/README.md)
+- [Relax Utils](relax-utils/index.md)
   - [Tuple](relax-utils/tuple.md)
   - [Triplet](relax-utils/triple.md)
   - [Result](relax-utils/result.md)
