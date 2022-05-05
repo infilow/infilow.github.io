@@ -27,6 +27,7 @@ Welcome to the Relax Stack!
   - [Scheduler](relax-utils/scheduler.md)
   - [ParallelStream](relax-utils/parallel-stream.md)
   - [Retry](relax-utils/retry.md)
+  - [Builder](relax-utils/builder.md)
 - [Relax Refine](relax-refine/README.md)
 - [Relax Ascii]()
 - [Relax Hints]()
