@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Tuple - Relax Stack</title>
+        <title>Builder - Relax Stack</title>
         <!-- Custom HTML head -->
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
@@ -74,7 +74,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="../WELCOME.html"><strong aria-hidden="true">1.</strong> Relax Stack</a></li><li class="chapter-item expanded "><a href="../relax-utils/index.html"><strong aria-hidden="true">2.</strong> Relax Utils</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../relax-utils/tuple.html" class="active"><strong aria-hidden="true">2.1.</strong> Tuple</a></li><li class="chapter-item expanded "><a href="../relax-utils/triple.html"><strong aria-hidden="true">2.2.</strong> Triplet</a></li><li class="chapter-item expanded "><a href="../relax-utils/result.html"><strong aria-hidden="true">2.3.</strong> Result</a></li><li class="chapter-item expanded "><a href="../relax-utils/function.html"><strong aria-hidden="true">2.4.</strong> Function</a></li><li class="chapter-item expanded "><a href="../relax-utils/require.html"><strong aria-hidden="true">2.5.</strong> Require</a></li><li class="chapter-item expanded "><a href="../relax-utils/resources.html"><strong aria-hidden="true">2.6.</strong> Resources</a></li><li class="chapter-item expanded "><a href="../relax-utils/hash.html"><strong aria-hidden="true">2.7.</strong> Hash</a></li><li class="chapter-item expanded "><a href="../relax-utils/encoder.html"><strong aria-hidden="true">2.8.</strong> Encoder</a></li><li class="chapter-item expanded "><a href="../relax-utils/network.html"><strong aria-hidden="true">2.9.</strong> Network</a></li><li class="chapter-item expanded "><a href="../relax-utils/shutdown.html"><strong aria-hidden="true">2.10.</strong> Shutdown</a></li><li class="chapter-item expanded "><a href="../relax-utils/loggable.html"><strong aria-hidden="true">2.11.</strong> Loggable</a></li><li class="chapter-item expanded "><a href="../relax-utils/durations.html"><strong aria-hidden="true">2.12.</strong> Durations</a></li><li class="chapter-item expanded "><a href="../relax-utils/datetimes.html"><strong aria-hidden="true">2.13.</strong> Datetimes</a></li><li class="chapter-item expanded "><a href="../relax-utils/datasize.html"><strong aria-hidden="true">2.14.</strong> DataSize</a></li><li class="chapter-item expanded "><a href="../relax-utils/objectsize.html"><strong aria-hidden="true">2.15.</strong> ObjectSize</a></li><li class="chapter-item expanded "><a href="../relax-utils/differ.html"><strong aria-hidden="true">2.16.</strong> ObjectDiffer</a></li><li class="chapter-item expanded "><a href="../relax-utils/futures.html"><strong aria-hidden="true">2.17.</strong> Futures</a></li><li class="chapter-item expanded "><a href="../relax-utils/threads.html"><strong aria-hidden="true">2.18.</strong> Threads</a></li><li class="chapter-item expanded "><a href="../relax-utils/pool.html"><strong aria-hidden="true">2.19.</strong> Pool</a></li><li class="chapter-item expanded "><a href="../relax-utils/timer.html"><strong aria-hidden="true">2.20.</strong> Timer</a></li><li class="chapter-item expanded "><a href="../relax-utils/scheduler.html"><strong aria-hidden="true">2.21.</strong> Scheduler</a></li><li class="chapter-item expanded "><a href="../relax-utils/parallel-stream.html"><strong aria-hidden="true">2.22.</strong> ParallelStream</a></li><li class="chapter-item expanded "><a href="../relax-utils/retry.html"><strong aria-hidden="true">2.23.</strong> Retry</a></li><li class="chapter-item expanded "><a href="../relax-utils/builder.html"><strong aria-hidden="true">2.24.</strong> Builder</a></li></ol></li><li class="chapter-item expanded "><a href="../relax-refine/index.html"><strong aria-hidden="true">3.</strong> Relax Refine</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.</strong> Relax Ascii</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">5.</strong> Relax Hints</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.</strong> Relax Timer</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">7.</strong> Relax Json</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">8.</strong> Relax Authentic</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">9.</strong> Relax Spring Toolkits</div></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../WELCOME.html"><strong aria-hidden="true">1.</strong> Relax Stack</a></li><li class="chapter-item expanded "><a href="../relax-utils/index.html"><strong aria-hidden="true">2.</strong> Relax Utils</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../relax-utils/tuple.html"><strong aria-hidden="true">2.1.</strong> Tuple</a></li><li class="chapter-item expanded "><a href="../relax-utils/triple.html"><strong aria-hidden="true">2.2.</strong> Triplet</a></li><li class="chapter-item expanded "><a href="../relax-utils/result.html"><strong aria-hidden="true">2.3.</strong> Result</a></li><li class="chapter-item expanded "><a href="../relax-utils/function.html"><strong aria-hidden="true">2.4.</strong> Function</a></li><li class="chapter-item expanded "><a href="../relax-utils/require.html"><strong aria-hidden="true">2.5.</strong> Require</a></li><li class="chapter-item expanded "><a href="../relax-utils/resources.html"><strong aria-hidden="true">2.6.</strong> Resources</a></li><li class="chapter-item expanded "><a href="../relax-utils/hash.html"><strong aria-hidden="true">2.7.</strong> Hash</a></li><li class="chapter-item expanded "><a href="../relax-utils/encoder.html"><strong aria-hidden="true">2.8.</strong> Encoder</a></li><li class="chapter-item expanded "><a href="../relax-utils/network.html"><strong aria-hidden="true">2.9.</strong> Network</a></li><li class="chapter-item expanded "><a href="../relax-utils/shutdown.html"><strong aria-hidden="true">2.10.</strong> Shutdown</a></li><li class="chapter-item expanded "><a href="../relax-utils/loggable.html"><strong aria-hidden="true">2.11.</strong> Loggable</a></li><li class="chapter-item expanded "><a href="../relax-utils/durations.html"><strong aria-hidden="true">2.12.</strong> Durations</a></li><li class="chapter-item expanded "><a href="../relax-utils/datetimes.html"><strong aria-hidden="true">2.13.</strong> Datetimes</a></li><li class="chapter-item expanded "><a href="../relax-utils/datasize.html"><strong aria-hidden="true">2.14.</strong> DataSize</a></li><li class="chapter-item expanded "><a href="../relax-utils/objectsize.html"><strong aria-hidden="true">2.15.</strong> ObjectSize</a></li><li class="chapter-item expanded "><a href="../relax-utils/differ.html"><strong aria-hidden="true">2.16.</strong> ObjectDiffer</a></li><li class="chapter-item expanded "><a href="../relax-utils/futures.html"><strong aria-hidden="true">2.17.</strong> Futures</a></li><li class="chapter-item expanded "><a href="../relax-utils/threads.html"><strong aria-hidden="true">2.18.</strong> Threads</a></li><li class="chapter-item expanded "><a href="../relax-utils/pool.html"><strong aria-hidden="true">2.19.</strong> Pool</a></li><li class="chapter-item expanded "><a href="../relax-utils/timer.html"><strong aria-hidden="true">2.20.</strong> Timer</a></li><li class="chapter-item expanded "><a href="../relax-utils/scheduler.html"><strong aria-hidden="true">2.21.</strong> Scheduler</a></li><li class="chapter-item expanded "><a href="../relax-utils/parallel-stream.html"><strong aria-hidden="true">2.22.</strong> ParallelStream</a></li><li class="chapter-item expanded "><a href="../relax-utils/retry.html"><strong aria-hidden="true">2.23.</strong> Retry</a></li><li class="chapter-item expanded "><a href="../relax-utils/builder.html" class="active"><strong aria-hidden="true">2.24.</strong> Builder</a></li></ol></li><li class="chapter-item expanded "><a href="../relax-refine/index.html"><strong aria-hidden="true">3.</strong> Relax Refine</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.</strong> Relax Ascii</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">5.</strong> Relax Hints</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.</strong> Relax Timer</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">7.</strong> Relax Json</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">8.</strong> Relax Authentic</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">9.</strong> Relax Spring Toolkits</div></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -130,21 +130,29 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="tuple"><a class="header" href="#tuple">Tuple</a></h1>
-<p>二元组：</p>
-<pre><code class="language-java">Tuple&lt;String, Integer&gt; tuple = Tuple.of(&quot;string&quot;, 123);
-String string = tuple.item1();
-Integer integer = tuple.item2();
+                        <h1 id="builder"><a class="header" href="#builder">Builder</a></h1>
+<p>简单的通用构建器：</p>
+<pre><code class="language-java">Friend friend = Builder.of(Friend::new)
+    .with(Friend::setName, &quot;name&quot;)
+    .with(Friend::setAge, 22)
+    .with(Friend::setVitalStatistics, 33, 44, 55)
+    .with(Friend::addHobby, &quot;Study&quot;)
+    .with(Friend::setBirthday, &quot;2000-01-01&quot;)
+    .with(Friend::setAddress, &quot;Beijing&quot;)
+    .with(Friend::setEmail, &quot;name@mail.com&quot;)
+    .with(Friend::setHairColor, &quot;Gray&quot;)
+    .with(Friend::addGift, &quot;2000-01-01&quot;, &quot;Hat&quot;)
+    .build();
 </code></pre>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="../relax-utils/index.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../relax-utils/retry.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
-                            <a rel="next" href="../relax-utils/triple.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next" href="../relax-refine/index.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
                         <div style="clear: both"></div>
@@ -153,10 +161,10 @@ Integer integer = tuple.item2();
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="../relax-utils/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../relax-utils/retry.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
-                    <a rel="next" href="../relax-utils/triple.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next" href="../relax-refine/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>
