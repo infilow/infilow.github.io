@@ -1,39 +1,45 @@
 <!DOCTYPE HTML>
-<html lang="en" class="sidebar-visible no-js ayu">
+<html lang="en" class="ayu" dir="ltr">
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
         <title>ObjectDiffer - Relax Stack</title>
+
+
         <!-- Custom HTML head -->
-        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="theme-color" content="#ffffff" />
+        <meta name="theme-color" content="#ffffff">
 
         <link rel="icon" href="../favicon.svg">
         <link rel="shortcut icon" href="../favicon.png">
         <link rel="stylesheet" href="../css/variables.css">
         <link rel="stylesheet" href="../css/general.css">
         <link rel="stylesheet" href="../css/chrome.css">
+
         <!-- Fonts -->
         <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
         <link rel="stylesheet" href="../fonts/fonts.css">
+
         <!-- Highlight.js Stylesheets -->
         <link rel="stylesheet" href="../highlight.css">
         <link rel="stylesheet" href="../tomorrow-night.css">
         <link rel="stylesheet" href="../ayu-highlight.css">
 
         <!-- Custom theme stylesheets -->
+
     </head>
-    <body>
+    <body class="sidebar-visible no-js">
+    <div id="body-container">
         <!-- Provide site root to javascript -->
-        <script type="text/javascript">
+        <script>
             var path_to_root = "../";
             var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "ayu";
         </script>
 
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
-        <script type="text/javascript">
+        <script>
             try {
                 var theme = localStorage.getItem('mdbook-theme');
                 var sidebar = localStorage.getItem('mdbook-sidebar');
@@ -49,45 +55,76 @@
         </script>
 
         <!-- Set the theme before any content is loaded, prevents flash -->
-        <script type="text/javascript">
+        <script>
             var theme;
             try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
             if (theme === null || theme === undefined) { theme = default_theme; }
             var html = document.querySelector('html');
-            html.classList.remove('no-js')
             html.classList.remove('ayu')
             html.classList.add(theme);
-            html.classList.add('js');
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
         </script>
 
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
         <!-- Hide / unhide sidebar before it is displayed -->
-        <script type="text/javascript">
-            var html = document.querySelector('html');
-            var sidebar = 'hidden';
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
             if (document.body.clientWidth >= 1080) {
                 try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
                 sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
             }
-            html.classList.remove('sidebar-visible');
-            html.classList.add("sidebar-" + sidebar);
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
         </script>
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="../WELCOME.html"><strong aria-hidden="true">1.</strong> Relax Stack</a></li><li class="chapter-item expanded "><a href="../relax-utils/index.html"><strong aria-hidden="true">2.</strong> Relax Utils</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../relax-utils/tuple.html"><strong aria-hidden="true">2.1.</strong> Tuple</a></li><li class="chapter-item expanded "><a href="../relax-utils/triple.html"><strong aria-hidden="true">2.2.</strong> Triplet</a></li><li class="chapter-item expanded "><a href="../relax-utils/result.html"><strong aria-hidden="true">2.3.</strong> Result</a></li><li class="chapter-item expanded "><a href="../relax-utils/function.html"><strong aria-hidden="true">2.4.</strong> Function</a></li><li class="chapter-item expanded "><a href="../relax-utils/require.html"><strong aria-hidden="true">2.5.</strong> Require</a></li><li class="chapter-item expanded "><a href="../relax-utils/resources.html"><strong aria-hidden="true">2.6.</strong> Resources</a></li><li class="chapter-item expanded "><a href="../relax-utils/hash.html"><strong aria-hidden="true">2.7.</strong> Hash</a></li><li class="chapter-item expanded "><a href="../relax-utils/encoder.html"><strong aria-hidden="true">2.8.</strong> Encoder</a></li><li class="chapter-item expanded "><a href="../relax-utils/network.html"><strong aria-hidden="true">2.9.</strong> Network</a></li><li class="chapter-item expanded "><a href="../relax-utils/shutdown.html"><strong aria-hidden="true">2.10.</strong> Shutdown</a></li><li class="chapter-item expanded "><a href="../relax-utils/loggable.html"><strong aria-hidden="true">2.11.</strong> Loggable</a></li><li class="chapter-item expanded "><a href="../relax-utils/durations.html"><strong aria-hidden="true">2.12.</strong> Durations</a></li><li class="chapter-item expanded "><a href="../relax-utils/datetimes.html"><strong aria-hidden="true">2.13.</strong> Datetimes</a></li><li class="chapter-item expanded "><a href="../relax-utils/datasize.html"><strong aria-hidden="true">2.14.</strong> DataSize</a></li><li class="chapter-item expanded "><a href="../relax-utils/objectsize.html"><strong aria-hidden="true">2.15.</strong> ObjectSize</a></li><li class="chapter-item expanded "><a href="../relax-utils/differ.html" class="active"><strong aria-hidden="true">2.16.</strong> ObjectDiffer</a></li><li class="chapter-item expanded "><a href="../relax-utils/futures.html"><strong aria-hidden="true">2.17.</strong> Futures</a></li><li class="chapter-item expanded "><a href="../relax-utils/threads.html"><strong aria-hidden="true">2.18.</strong> Threads</a></li><li class="chapter-item expanded "><a href="../relax-utils/pool.html"><strong aria-hidden="true">2.19.</strong> Pool</a></li><li class="chapter-item expanded "><a href="../relax-utils/timer.html"><strong aria-hidden="true">2.20.</strong> Timer</a></li><li class="chapter-item expanded "><a href="../relax-utils/scheduler.html"><strong aria-hidden="true">2.21.</strong> Scheduler</a></li><li class="chapter-item expanded "><a href="../relax-utils/parallel-stream.html"><strong aria-hidden="true">2.22.</strong> ParallelStream</a></li><li class="chapter-item expanded "><a href="../relax-utils/retry.html"><strong aria-hidden="true">2.23.</strong> Retry</a></li><li class="chapter-item expanded "><a href="../relax-utils/builder.html"><strong aria-hidden="true">2.24.</strong> Builder</a></li></ol></li><li class="chapter-item expanded "><a href="../relax-refine/index.html"><strong aria-hidden="true">3.</strong> Relax Refine</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.</strong> Relax Ascii</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">5.</strong> Relax Hints</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.</strong> Relax Timer</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">7.</strong> Relax Json</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">8.</strong> Relax Authentic</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">9.</strong> Relax Spring Toolkits</div></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../WELCOME.html"><strong aria-hidden="true">1.</strong> Relax Stack</a></li><li class="chapter-item expanded "><a href="../relax-utils/index.html"><strong aria-hidden="true">2.</strong> Relax Utils</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../relax-utils/tuple.html"><strong aria-hidden="true">2.1.</strong> Tuple</a></li><li class="chapter-item expanded "><a href="../relax-utils/triple.html"><strong aria-hidden="true">2.2.</strong> Triplet</a></li><li class="chapter-item expanded "><a href="../relax-utils/result.html"><strong aria-hidden="true">2.3.</strong> Result</a></li><li class="chapter-item expanded "><a href="../relax-utils/function.html"><strong aria-hidden="true">2.4.</strong> Function</a></li><li class="chapter-item expanded "><a href="../relax-utils/require.html"><strong aria-hidden="true">2.5.</strong> Require</a></li><li class="chapter-item expanded "><a href="../relax-utils/resources.html"><strong aria-hidden="true">2.6.</strong> Resources</a></li><li class="chapter-item expanded "><a href="../relax-utils/hash.html"><strong aria-hidden="true">2.7.</strong> Hash</a></li><li class="chapter-item expanded "><a href="../relax-utils/encoder.html"><strong aria-hidden="true">2.8.</strong> Encoder</a></li><li class="chapter-item expanded "><a href="../relax-utils/network.html"><strong aria-hidden="true">2.9.</strong> Network</a></li><li class="chapter-item expanded "><a href="../relax-utils/shutdown.html"><strong aria-hidden="true">2.10.</strong> Shutdown</a></li><li class="chapter-item expanded "><a href="../relax-utils/loggable.html"><strong aria-hidden="true">2.11.</strong> Loggable</a></li><li class="chapter-item expanded "><a href="../relax-utils/durations.html"><strong aria-hidden="true">2.12.</strong> Durations</a></li><li class="chapter-item expanded "><a href="../relax-utils/datetimes.html"><strong aria-hidden="true">2.13.</strong> Datetimes</a></li><li class="chapter-item expanded "><a href="../relax-utils/datasize.html"><strong aria-hidden="true">2.14.</strong> DataSize</a></li><li class="chapter-item expanded "><a href="../relax-utils/objectsize.html"><strong aria-hidden="true">2.15.</strong> ObjectSize</a></li><li class="chapter-item expanded "><a href="../relax-utils/differ.html" class="active"><strong aria-hidden="true">2.16.</strong> ObjectDiffer</a></li><li class="chapter-item expanded "><a href="../relax-utils/futures.html"><strong aria-hidden="true">2.17.</strong> Futures</a></li><li class="chapter-item expanded "><a href="../relax-utils/threads.html"><strong aria-hidden="true">2.18.</strong> Threads</a></li><li class="chapter-item expanded "><a href="../relax-utils/pool.html"><strong aria-hidden="true">2.19.</strong> Pool</a></li><li class="chapter-item expanded "><a href="../relax-utils/timer.html"><strong aria-hidden="true">2.20.</strong> Timer</a></li><li class="chapter-item expanded "><a href="../relax-utils/scheduler.html"><strong aria-hidden="true">2.21.</strong> Scheduler</a></li><li class="chapter-item expanded "><a href="../relax-utils/parallel-stream.html"><strong aria-hidden="true">2.22.</strong> ParallelStream</a></li><li class="chapter-item expanded "><a href="../relax-utils/retry.html"><strong aria-hidden="true">2.23.</strong> Retry</a></li><li class="chapter-item expanded "><a href="../relax-utils/builder.html"><strong aria-hidden="true">2.24.</strong> Builder</a></li></ol></li><li class="chapter-item expanded "><a href="../relax-refine/index.html"><strong aria-hidden="true">3.</strong> Relax Refine</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.</strong> Relax Ascii</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">5.</strong> Relax Hints</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.</strong> Relax Timer</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">7.</strong> Relax Json</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">8.</strong> Relax Authentic</div></li><li class="chapter-item expanded "><a href="../relax-spring-starters/index.html"><strong aria-hidden="true">9.</strong> Relax Spring Starters</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../relax-spring-starters/java-spring-boot-starter.html"><strong aria-hidden="true">9.1.</strong> java-spring-boot-starter</a></li><li class="chapter-item expanded "><a href="../relax-spring-starters/track-rest-spring-boot-starter.html"><strong aria-hidden="true">9.2.</strong> track-rest-spring-boot-starter</a></li><li class="chapter-item expanded "><a href="../relax-spring-starters/track-unirest.html"><strong aria-hidden="true">9.3.</strong> track-unirest</a></li><li class="chapter-item expanded "><a href="../relax-spring-starters/router-spring-boot-starter.html"><strong aria-hidden="true">9.4.</strong> router-spring-boot-starter</a></li></ol></li><li class="chapter-item expanded "><a href="../demos/index.html"><strong aria-hidden="true">10.</strong> Demo Projects</a></li></ol>
             </div>
-            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
         </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
 
         <div id="page-wrapper" class="page-wrapper">
 
             <div class="page">
-                <div id="menu-bar-hover-placeholder"></div>
-                <div id="menu-bar" class="menu-bar sticky bordered">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
                     <div class="left-buttons">
-                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
                             <i class="fa fa-bars"></i>
-                        </button>
+                        </label>
                         <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
                             <i class="fa fa-paint-brush"></i>
                         </button>
@@ -96,7 +133,7 @@
                             <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
                         </ul>
                         <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
                             <i class="fa fa-search"></i>
@@ -106,6 +143,7 @@
                     <h1 class="menu-title">Relax Stack</h1>
 
                     <div class="right-buttons">
+
                     </div>
                 </div>
 
@@ -119,8 +157,9 @@
                         </ul>
                     </div>
                 </div>
+
                 <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
-                <script type="text/javascript">
+                <script>
                     document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
                     document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
                     Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
@@ -154,12 +193,12 @@
 </blockquote>
 <p>如果以上功能不能满足的需要，可以尝试使用  <a href="https://github.com/SQiShER/java-object-diff">java-object-differ</a>。</p>
 <h2 id="应用示例"><a class="header" href="#应用示例">应用示例</a></h2>
-<pre><code class="language-java">String val1 = &quot;val1&quot;;
-String val2 = &quot;val2&quot;;
+<pre><code class="language-java">String val1 = "val1";
+String val2 = "val2";
 List&lt;Integer&gt; list1 = Arrays.asList(1,2);
 List&lt;Integer&gt; list2 = Arrays.asList(3,4);
-Person person1 = new Person(&quot;Anna&quot;, 22);
-Person person2 = new Person(&quot;Luna&quot;, 23);
+Person person1 = new Person("Anna", 22);
+Person person2 = new Person("Luna", 23);
 
 Differ fieldDiffer = Differ.builder()
     .include()
@@ -186,9 +225,11 @@ List&lt;FieldInfo&gt; diff4 = getterDiffer.diff(person1, person2);
                             <a rel="prev" href="../relax-utils/objectsize.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
-                            <a rel="next" href="../relax-utils/futures.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+
+                            <a rel="next prefetch" href="../relax-utils/futures.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
+
                         <div style="clear: both"></div>
                     </nav>
                 </div>
@@ -198,23 +239,33 @@ List&lt;FieldInfo&gt; diff4 = getterDiffer.diff(person1, person2);
                     <a rel="prev" href="../relax-utils/objectsize.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
-                    <a rel="next" href="../relax-utils/futures.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+
+                    <a rel="next prefetch" href="../relax-utils/futures.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>
 
         </div>
 
-        <script type="text/javascript">
+
+
+
+        <script>
             window.playground_copyable = true;
         </script>
-        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
-        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
-        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+
+        <script src="../elasticlunr.min.js"></script>
+        <script src="../mark.min.js"></script>
+        <script src="../searcher.js"></script>
+
+        <script src="../clipboard.min.js"></script>
+        <script src="../highlight.js"></script>
+        <script src="../book.js"></script>
 
         <!-- Custom JS scripts -->
+
+
+    </div>
     </body>
 </html>

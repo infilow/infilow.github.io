@@ -1,0 +1,351 @@
+<!DOCTYPE HTML>
+<html lang="en" class="ayu" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>java-spring-boot-starter - Relax Stack</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body class="sidebar-visible no-js">
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "ayu";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('ayu')
+            html.classList.add(theme);
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../WELCOME.html"><strong aria-hidden="true">1.</strong> Relax Stack</a></li><li class="chapter-item expanded "><a href="../relax-utils/index.html"><strong aria-hidden="true">2.</strong> Relax Utils</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../relax-utils/tuple.html"><strong aria-hidden="true">2.1.</strong> Tuple</a></li><li class="chapter-item expanded "><a href="../relax-utils/triple.html"><strong aria-hidden="true">2.2.</strong> Triplet</a></li><li class="chapter-item expanded "><a href="../relax-utils/result.html"><strong aria-hidden="true">2.3.</strong> Result</a></li><li class="chapter-item expanded "><a href="../relax-utils/function.html"><strong aria-hidden="true">2.4.</strong> Function</a></li><li class="chapter-item expanded "><a href="../relax-utils/require.html"><strong aria-hidden="true">2.5.</strong> Require</a></li><li class="chapter-item expanded "><a href="../relax-utils/resources.html"><strong aria-hidden="true">2.6.</strong> Resources</a></li><li class="chapter-item expanded "><a href="../relax-utils/hash.html"><strong aria-hidden="true">2.7.</strong> Hash</a></li><li class="chapter-item expanded "><a href="../relax-utils/encoder.html"><strong aria-hidden="true">2.8.</strong> Encoder</a></li><li class="chapter-item expanded "><a href="../relax-utils/network.html"><strong aria-hidden="true">2.9.</strong> Network</a></li><li class="chapter-item expanded "><a href="../relax-utils/shutdown.html"><strong aria-hidden="true">2.10.</strong> Shutdown</a></li><li class="chapter-item expanded "><a href="../relax-utils/loggable.html"><strong aria-hidden="true">2.11.</strong> Loggable</a></li><li class="chapter-item expanded "><a href="../relax-utils/durations.html"><strong aria-hidden="true">2.12.</strong> Durations</a></li><li class="chapter-item expanded "><a href="../relax-utils/datetimes.html"><strong aria-hidden="true">2.13.</strong> Datetimes</a></li><li class="chapter-item expanded "><a href="../relax-utils/datasize.html"><strong aria-hidden="true">2.14.</strong> DataSize</a></li><li class="chapter-item expanded "><a href="../relax-utils/objectsize.html"><strong aria-hidden="true">2.15.</strong> ObjectSize</a></li><li class="chapter-item expanded "><a href="../relax-utils/differ.html"><strong aria-hidden="true">2.16.</strong> ObjectDiffer</a></li><li class="chapter-item expanded "><a href="../relax-utils/futures.html"><strong aria-hidden="true">2.17.</strong> Futures</a></li><li class="chapter-item expanded "><a href="../relax-utils/threads.html"><strong aria-hidden="true">2.18.</strong> Threads</a></li><li class="chapter-item expanded "><a href="../relax-utils/pool.html"><strong aria-hidden="true">2.19.</strong> Pool</a></li><li class="chapter-item expanded "><a href="../relax-utils/timer.html"><strong aria-hidden="true">2.20.</strong> Timer</a></li><li class="chapter-item expanded "><a href="../relax-utils/scheduler.html"><strong aria-hidden="true">2.21.</strong> Scheduler</a></li><li class="chapter-item expanded "><a href="../relax-utils/parallel-stream.html"><strong aria-hidden="true">2.22.</strong> ParallelStream</a></li><li class="chapter-item expanded "><a href="../relax-utils/retry.html"><strong aria-hidden="true">2.23.</strong> Retry</a></li><li class="chapter-item expanded "><a href="../relax-utils/builder.html"><strong aria-hidden="true">2.24.</strong> Builder</a></li></ol></li><li class="chapter-item expanded "><a href="../relax-refine/index.html"><strong aria-hidden="true">3.</strong> Relax Refine</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.</strong> Relax Ascii</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">5.</strong> Relax Hints</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.</strong> Relax Timer</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">7.</strong> Relax Json</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">8.</strong> Relax Authentic</div></li><li class="chapter-item expanded "><a href="../relax-spring-starters/index.html"><strong aria-hidden="true">9.</strong> Relax Spring Starters</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../relax-spring-starters/java-spring-boot-starter.html" class="active"><strong aria-hidden="true">9.1.</strong> java-spring-boot-starter</a></li><li class="chapter-item expanded "><a href="../relax-spring-starters/track-rest-spring-boot-starter.html"><strong aria-hidden="true">9.2.</strong> track-rest-spring-boot-starter</a></li><li class="chapter-item expanded "><a href="../relax-spring-starters/track-unirest.html"><strong aria-hidden="true">9.3.</strong> track-unirest</a></li><li class="chapter-item expanded "><a href="../relax-spring-starters/router-spring-boot-starter.html"><strong aria-hidden="true">9.4.</strong> router-spring-boot-starter</a></li></ol></li><li class="chapter-item expanded "><a href="../demos/index.html"><strong aria-hidden="true">10.</strong> Demo Projects</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Relax Stack</h1>
+
+                    <div class="right-buttons">
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="relax-java-spring-boot-starter"><a class="header" href="#relax-java-spring-boot-starter">relax-java-spring-boot-starter</a></h1>
+<p>Spring boot 常用配置的基本封装，简化新建项目时的重复配置。</p>
+<h2 id="contextconfigure"><a class="header" href="#contextconfigure">ContextConfigure</a></h2>
+<p>提供一个静态的用于获取 <code>ApplicationContext</code> 的方法。</p>
+<pre><code class="language-java">package com.demo;
+
+import com.infilos.spring.config.ContextConfigure;
+
+public class DemoService {
+
+    public static void demoMethod() {
+        // 通过静态方法使用
+        ApplicationContext context = ContextConfigure.context();
+        
+        // 同时提供了简化的注入 bean 的方法
+        SomeBean bean1 = ContextConfigure.inject("someBeanName");
+        SomeBean bean2 = ContextConfigure.inject(someBean.class);
+    }
+}
+</code></pre>
+<h2 id="jsonconfigure"><a class="header" href="#jsonconfigure">JsonConfigure</a></h2>
+<p>统一设置 Spring 接口中使用的 Jackson <code>ObjectMapper</code>，通过 <code>MappingJackson2HttpMessageConverter</code> 设置为全局统一的 <code>ObjectMapper</code>。</p>
+<p>用于确保全局一致的序列化、反序列化行为。可以通过 <code>com.infilos.relax.Json.underMapper()</code> 获取该全局 <code>ObjectMapper</code> 或直接用于执行序列化或反序列化。</p>
+<p>同时提供了几种时间类型的序列化反序列化器：</p>
+<ul>
+<li><code>LocalDate</code>：<code>yyyy-MM-dd</code></li>
+<li><code>LocalDatetime</code>：<code>yyyy-MM-dd HH:mm:ss</code></li>
+<li><code>ZonedDatetime</code>：<code>yyyy-MM-dd HH:mm:ss</code></li>
+<li><code>Timestamp</code>：<code>yyyy-MM-dd HH:mm:ss</code></li>
+</ul>
+<p>基于 <code>name</code> 或 <code>code</code> 的枚举序列化反序列化器，继承 <code>NameBasedEnum</code> 或 <code>CodeBasedEnum</code> 的枚举可以直接用于类字段类型，并能自动使用 <code>name</code> 或 <code>code</code> 实现序列化或反序列化。</p>
+<h2 id="shutdownconfigure"><a class="header" href="#shutdownconfigure">ShutdownConfigure</a></h2>
+<p>用于注册 Spring 服务终止时的回调逻辑，当 Spring 服务终止时，将按注册顺序逐个执行已注册的回调逻辑，实现自定义清理逻辑。</p>
+<pre><code class="language-java">import com.infilos.spring.config.ShutdownConfigure;
+
+@Service
+class DemoService {
+    @Autowired
+    private ShutdownConfigure shutdownConfigure;
+    
+    public void demoMethod() {
+        shutdownConfigure.register(() -&gt; {
+            // custom shutdown logic here
+        });
+    }
+}
+</code></pre>
+<h2 id="swaggerconfigure"><a class="header" href="#swaggerconfigure">SwaggerConfigure</a></h2>
+<p>基于 <code>springdoc-openapi-ui</code> 的预设 Swagger 配置，可以直接通过地址 <code>http://localhost:8080/swagger-ui.html</code> 访问 Swagger 文档。</p>
+<p>基本的接口配置：</p>
+<pre><code class="language-java">package com.demo;
+
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
+
+@Tag(name="用户管理接口")
+@RestController("/user")
+public class UserController {
+    
+    @Operation(summary="创建用户")
+    @PostMapping("/create")
+    public Long createUser(@RequestBody UserCreation creation) {
+        return 1L;
+    }
+}
+</code></pre>
+<p>生产环境关闭 Swagger，如 <code>application-prod.properties</code>：</p>
+<pre><code class="language-properties">springdoc.api-docs.enabled=false
+springdoc.swagger-ui.enabled=false
+</code></pre>
+<h2 id="respond"><a class="header" href="#respond">Respond</a></h2>
+<p>Spring 接口响应封装类。</p>
+<p>Spring 接口的客户端可能是前端、APP 或他后端服务(用作 RPC)，可能会跨越多层内外网关，为了避免混淆，常见做法是将 HTTP 协议层的状态码与业务状态码分离，接口客户端对接口响应的判断则分为两层：</p>
+<ul>
+<li>HTTP 协议状态码：<code>200 &lt;= code &lt; 300</code> 则表示网络层成功，否则均为网络层失败</li>
+<li>业务状态码：在网络层成功的前提下，如果 <code>code==0</code> 则表示业务成功，否则均为业务失败</li>
+</ul>
+<p>基本结构：</p>
+<pre><code class="language-java">public final class Respond&lt;T&gt; {
+    private final Integer code;
+    private final T data;
+    private final String message;
+}
+</code></pre>
+<p>常用静态方法：</p>
+<ul>
+<li><code>&lt;T&gt; Respond&lt;T&gt; succed()</code></li>
+<li><code>&lt;T&gt; Respond&lt;T&gt; succed(T data)</code></li>
+<li><code>&lt;T&gt; Respond&lt;T&gt; succed(int code, T data)</code></li>
+<li><code>&lt;T&gt; Respond&lt;T&gt; succed(int code)</code></li>
+<li><code>&lt;T&gt; Respond&lt;T&gt; failed(String message)</code></li>
+<li><code>&lt;T&gt; Respond&lt;T&gt; failed(int code, String message)</code></li>
+<li><code>&lt;T&gt; Respond&lt;T&gt; failed(RespondEnum&lt;?&gt; error)</code></li>
+<li><code>&lt;T&gt; Respond&lt;T&gt; failed(RespondEnum&lt;?&gt; error, String message)</code></li>
+<li><code>&lt;T&gt; Respond&lt;T&gt; failed(RespondEnum&lt;?&gt; error, Object... messageTemplateArgs)</code></li>
+<li><code>&lt;T&gt; Respond&lt;T&gt; failed(Throwable cause)</code></li>
+<li><code>&lt;T&gt; Respond&lt;T&gt; failed(int code, Throwable cause)</code></li>
+<li><code>&lt;T&gt; Respond&lt;T&gt; failed()</code></li>
+<li><code>&lt;T&gt; Respond&lt;T&gt; of(Either&lt;?, T&gt; either)</code></li>
+<li><code>ResponseEntity&lt;byte[]&gt; ofBytes(HttpStatus status, HttpHeaders headers, byte[] bytes)</code></li>
+<li><code>ResponseEntity&lt;byte[]&gt; ofFileBytes(String name, byte[] bytes)</code></li>
+<li><code>ResponseEntity&lt;byte[]&gt; ofFileBytes(String name, String format, byte[] bytes)</code></li>
+</ul>
+<p>继承 <code>RespondEnum&lt;E&gt;</code> 可用于实现业务自定义错误码枚举，比如:</p>
+<pre><code class="language-java">@AllArgsConstructor
+public enum BizError implements RespondEnum&lt;BizError&gt; {
+    PARAMS_INVALID(10001, "请求参数无效"),
+    ENTITY_NOTFOUND(10002, "请求实体不存在: %s"),
+    ;
+
+    private final int code;
+    private final String message;
+
+    @Override
+    public int getCode() {
+        return code;
+    }
+
+    @Override
+    public String getMessage() {
+        return message;
+    }
+}
+</code></pre>
+<p>在接口中使用：</p>
+<pre><code>return Respond.failed(BizError.PARAMS_INVALID);
+return Respond.failed(BizError.ENTITY_NOTFOUND, id);
+</code></pre>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../relax-spring-starters/index.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../relax-spring-starters/track-rest-spring-boot-starter.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../relax-spring-starters/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../relax-spring-starters/track-rest-spring-boot-starter.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr.min.js"></script>
+        <script src="../mark.min.js"></script>
+        <script src="../searcher.js"></script>
+
+        <script src="../clipboard.min.js"></script>
+        <script src="../highlight.js"></script>
+        <script src="../book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>

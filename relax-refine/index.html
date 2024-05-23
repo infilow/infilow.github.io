@@ -1,39 +1,45 @@
 <!DOCTYPE HTML>
-<html lang="en" class="sidebar-visible no-js ayu">
+<html lang="en" class="ayu" dir="ltr">
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
         <title>Relax Refine - Relax Stack</title>
+
+
         <!-- Custom HTML head -->
-        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="theme-color" content="#ffffff" />
+        <meta name="theme-color" content="#ffffff">
 
         <link rel="icon" href="../favicon.svg">
         <link rel="shortcut icon" href="../favicon.png">
         <link rel="stylesheet" href="../css/variables.css">
         <link rel="stylesheet" href="../css/general.css">
         <link rel="stylesheet" href="../css/chrome.css">
+
         <!-- Fonts -->
         <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
         <link rel="stylesheet" href="../fonts/fonts.css">
+
         <!-- Highlight.js Stylesheets -->
         <link rel="stylesheet" href="../highlight.css">
         <link rel="stylesheet" href="../tomorrow-night.css">
         <link rel="stylesheet" href="../ayu-highlight.css">
 
         <!-- Custom theme stylesheets -->
+
     </head>
-    <body>
+    <body class="sidebar-visible no-js">
+    <div id="body-container">
         <!-- Provide site root to javascript -->
-        <script type="text/javascript">
+        <script>
             var path_to_root = "../";
             var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "ayu";
         </script>
 
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
-        <script type="text/javascript">
+        <script>
             try {
                 var theme = localStorage.getItem('mdbook-theme');
                 var sidebar = localStorage.getItem('mdbook-sidebar');
@@ -49,45 +55,76 @@
         </script>
 
         <!-- Set the theme before any content is loaded, prevents flash -->
-        <script type="text/javascript">
+        <script>
             var theme;
             try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
             if (theme === null || theme === undefined) { theme = default_theme; }
             var html = document.querySelector('html');
-            html.classList.remove('no-js')
             html.classList.remove('ayu')
             html.classList.add(theme);
-            html.classList.add('js');
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
         </script>
 
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
         <!-- Hide / unhide sidebar before it is displayed -->
-        <script type="text/javascript">
-            var html = document.querySelector('html');
-            var sidebar = 'hidden';
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
             if (document.body.clientWidth >= 1080) {
                 try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
                 sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
             }
-            html.classList.remove('sidebar-visible');
-            html.classList.add("sidebar-" + sidebar);
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
         </script>
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="../WELCOME.html"><strong aria-hidden="true">1.</strong> Relax Stack</a></li><li class="chapter-item expanded "><a href="../relax-utils/index.html"><strong aria-hidden="true">2.</strong> Relax Utils</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../relax-utils/tuple.html"><strong aria-hidden="true">2.1.</strong> Tuple</a></li><li class="chapter-item expanded "><a href="../relax-utils/triple.html"><strong aria-hidden="true">2.2.</strong> Triplet</a></li><li class="chapter-item expanded "><a href="../relax-utils/result.html"><strong aria-hidden="true">2.3.</strong> Result</a></li><li class="chapter-item expanded "><a href="../relax-utils/function.html"><strong aria-hidden="true">2.4.</strong> Function</a></li><li class="chapter-item expanded "><a href="../relax-utils/require.html"><strong aria-hidden="true">2.5.</strong> Require</a></li><li class="chapter-item expanded "><a href="../relax-utils/resources.html"><strong aria-hidden="true">2.6.</strong> Resources</a></li><li class="chapter-item expanded "><a href="../relax-utils/hash.html"><strong aria-hidden="true">2.7.</strong> Hash</a></li><li class="chapter-item expanded "><a href="../relax-utils/encoder.html"><strong aria-hidden="true">2.8.</strong> Encoder</a></li><li class="chapter-item expanded "><a href="../relax-utils/network.html"><strong aria-hidden="true">2.9.</strong> Network</a></li><li class="chapter-item expanded "><a href="../relax-utils/shutdown.html"><strong aria-hidden="true">2.10.</strong> Shutdown</a></li><li class="chapter-item expanded "><a href="../relax-utils/loggable.html"><strong aria-hidden="true">2.11.</strong> Loggable</a></li><li class="chapter-item expanded "><a href="../relax-utils/durations.html"><strong aria-hidden="true">2.12.</strong> Durations</a></li><li class="chapter-item expanded "><a href="../relax-utils/datetimes.html"><strong aria-hidden="true">2.13.</strong> Datetimes</a></li><li class="chapter-item expanded "><a href="../relax-utils/datasize.html"><strong aria-hidden="true">2.14.</strong> DataSize</a></li><li class="chapter-item expanded "><a href="../relax-utils/objectsize.html"><strong aria-hidden="true">2.15.</strong> ObjectSize</a></li><li class="chapter-item expanded "><a href="../relax-utils/differ.html"><strong aria-hidden="true">2.16.</strong> ObjectDiffer</a></li><li class="chapter-item expanded "><a href="../relax-utils/futures.html"><strong aria-hidden="true">2.17.</strong> Futures</a></li><li class="chapter-item expanded "><a href="../relax-utils/threads.html"><strong aria-hidden="true">2.18.</strong> Threads</a></li><li class="chapter-item expanded "><a href="../relax-utils/pool.html"><strong aria-hidden="true">2.19.</strong> Pool</a></li><li class="chapter-item expanded "><a href="../relax-utils/timer.html"><strong aria-hidden="true">2.20.</strong> Timer</a></li><li class="chapter-item expanded "><a href="../relax-utils/scheduler.html"><strong aria-hidden="true">2.21.</strong> Scheduler</a></li><li class="chapter-item expanded "><a href="../relax-utils/parallel-stream.html"><strong aria-hidden="true">2.22.</strong> ParallelStream</a></li><li class="chapter-item expanded "><a href="../relax-utils/retry.html"><strong aria-hidden="true">2.23.</strong> Retry</a></li><li class="chapter-item expanded "><a href="../relax-utils/builder.html"><strong aria-hidden="true">2.24.</strong> Builder</a></li></ol></li><li class="chapter-item expanded "><a href="../relax-refine/index.html" class="active"><strong aria-hidden="true">3.</strong> Relax Refine</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.</strong> Relax Ascii</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">5.</strong> Relax Hints</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.</strong> Relax Timer</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">7.</strong> Relax Json</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">8.</strong> Relax Authentic</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">9.</strong> Relax Spring Toolkits</div></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../WELCOME.html"><strong aria-hidden="true">1.</strong> Relax Stack</a></li><li class="chapter-item expanded "><a href="../relax-utils/index.html"><strong aria-hidden="true">2.</strong> Relax Utils</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../relax-utils/tuple.html"><strong aria-hidden="true">2.1.</strong> Tuple</a></li><li class="chapter-item expanded "><a href="../relax-utils/triple.html"><strong aria-hidden="true">2.2.</strong> Triplet</a></li><li class="chapter-item expanded "><a href="../relax-utils/result.html"><strong aria-hidden="true">2.3.</strong> Result</a></li><li class="chapter-item expanded "><a href="../relax-utils/function.html"><strong aria-hidden="true">2.4.</strong> Function</a></li><li class="chapter-item expanded "><a href="../relax-utils/require.html"><strong aria-hidden="true">2.5.</strong> Require</a></li><li class="chapter-item expanded "><a href="../relax-utils/resources.html"><strong aria-hidden="true">2.6.</strong> Resources</a></li><li class="chapter-item expanded "><a href="../relax-utils/hash.html"><strong aria-hidden="true">2.7.</strong> Hash</a></li><li class="chapter-item expanded "><a href="../relax-utils/encoder.html"><strong aria-hidden="true">2.8.</strong> Encoder</a></li><li class="chapter-item expanded "><a href="../relax-utils/network.html"><strong aria-hidden="true">2.9.</strong> Network</a></li><li class="chapter-item expanded "><a href="../relax-utils/shutdown.html"><strong aria-hidden="true">2.10.</strong> Shutdown</a></li><li class="chapter-item expanded "><a href="../relax-utils/loggable.html"><strong aria-hidden="true">2.11.</strong> Loggable</a></li><li class="chapter-item expanded "><a href="../relax-utils/durations.html"><strong aria-hidden="true">2.12.</strong> Durations</a></li><li class="chapter-item expanded "><a href="../relax-utils/datetimes.html"><strong aria-hidden="true">2.13.</strong> Datetimes</a></li><li class="chapter-item expanded "><a href="../relax-utils/datasize.html"><strong aria-hidden="true">2.14.</strong> DataSize</a></li><li class="chapter-item expanded "><a href="../relax-utils/objectsize.html"><strong aria-hidden="true">2.15.</strong> ObjectSize</a></li><li class="chapter-item expanded "><a href="../relax-utils/differ.html"><strong aria-hidden="true">2.16.</strong> ObjectDiffer</a></li><li class="chapter-item expanded "><a href="../relax-utils/futures.html"><strong aria-hidden="true">2.17.</strong> Futures</a></li><li class="chapter-item expanded "><a href="../relax-utils/threads.html"><strong aria-hidden="true">2.18.</strong> Threads</a></li><li class="chapter-item expanded "><a href="../relax-utils/pool.html"><strong aria-hidden="true">2.19.</strong> Pool</a></li><li class="chapter-item expanded "><a href="../relax-utils/timer.html"><strong aria-hidden="true">2.20.</strong> Timer</a></li><li class="chapter-item expanded "><a href="../relax-utils/scheduler.html"><strong aria-hidden="true">2.21.</strong> Scheduler</a></li><li class="chapter-item expanded "><a href="../relax-utils/parallel-stream.html"><strong aria-hidden="true">2.22.</strong> ParallelStream</a></li><li class="chapter-item expanded "><a href="../relax-utils/retry.html"><strong aria-hidden="true">2.23.</strong> Retry</a></li><li class="chapter-item expanded "><a href="../relax-utils/builder.html"><strong aria-hidden="true">2.24.</strong> Builder</a></li></ol></li><li class="chapter-item expanded "><a href="../relax-refine/index.html" class="active"><strong aria-hidden="true">3.</strong> Relax Refine</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.</strong> Relax Ascii</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">5.</strong> Relax Hints</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.</strong> Relax Timer</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">7.</strong> Relax Json</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">8.</strong> Relax Authentic</div></li><li class="chapter-item expanded "><a href="../relax-spring-starters/index.html"><strong aria-hidden="true">9.</strong> Relax Spring Starters</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../relax-spring-starters/java-spring-boot-starter.html"><strong aria-hidden="true">9.1.</strong> java-spring-boot-starter</a></li><li class="chapter-item expanded "><a href="../relax-spring-starters/track-rest-spring-boot-starter.html"><strong aria-hidden="true">9.2.</strong> track-rest-spring-boot-starter</a></li><li class="chapter-item expanded "><a href="../relax-spring-starters/track-unirest.html"><strong aria-hidden="true">9.3.</strong> track-unirest</a></li><li class="chapter-item expanded "><a href="../relax-spring-starters/router-spring-boot-starter.html"><strong aria-hidden="true">9.4.</strong> router-spring-boot-starter</a></li></ol></li><li class="chapter-item expanded "><a href="../demos/index.html"><strong aria-hidden="true">10.</strong> Demo Projects</a></li></ol>
             </div>
-            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
         </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
 
         <div id="page-wrapper" class="page-wrapper">
 
             <div class="page">
-                <div id="menu-bar-hover-placeholder"></div>
-                <div id="menu-bar" class="menu-bar sticky bordered">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
                     <div class="left-buttons">
-                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
                             <i class="fa fa-bars"></i>
-                        </button>
+                        </label>
                         <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
                             <i class="fa fa-paint-brush"></i>
                         </button>
@@ -96,7 +133,7 @@
                             <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
                         </ul>
                         <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
                             <i class="fa fa-search"></i>
@@ -106,6 +143,7 @@
                     <h1 class="menu-title">Relax Stack</h1>
 
                     <div class="right-buttons">
+
                     </div>
                 </div>
 
@@ -119,8 +157,9 @@
                         </ul>
                     </div>
                 </div>
+
                 <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
-                <script type="text/javascript">
+                <script>
                     document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
                     document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
                     Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
@@ -184,24 +223,24 @@
 </ul>
 <h2 id="开始使用"><a class="header" href="#开始使用">开始使用</a></h2>
 <h3 id="1-校验变量"><a class="header" href="#1-校验变量">1. 校验变量</a></h3>
-<pre><code class="language-java">RefineResult result1 = Refine.check(&quot;Julia&quot;, Strings.NotBlank);
+<pre><code class="language-java">RefineResult result1 = Refine.check("Julia", Strings.NotBlank);
 </code></pre>
 <p>校验结果 <code>RefineResult</code> 封装了成功或失败的信息，可以进一步执行额外的处理，比如转换为统一的错误码和本地化错误信息。</p>
 <pre><code class="language-java">RefineResult result2 = Refine.check(
-    Refine.of(&quot;case-1&quot;).expect(&quot;Julia&quot;).match(Strings.NotBlank),
-    Refine.of(&quot;case-2&quot;).expect(&quot;&quot;).match(Strings.IsBlank)
+    Refine.of("case-1").expect("Julia").match(Strings.NotBlank),
+    Refine.of("case-2").expect("").match(Strings.IsBlank)
 );
 
 Integer val = 12;
-RefineResult result3 = Refine.of(&quot;case-3&quot;).when(() -&gt; val &gt;10).expect(val).match(Numbers.Modulo(5,2)).check();
+RefineResult result3 = Refine.of("case-3").when(() -&gt; val &gt;10).expect(val).match(Numbers.Modulo(5,2)).check();
 
-RefineResult result4 = Refine.of(&quot;case-4&quot;).expect(&quot;value&quot;).matchAll(Objects.NotNull(),Strings.NotBlank).check();
+RefineResult result4 = Refine.of("case-4").expect("value").matchAll(Objects.NotNull(),Strings.NotBlank).check();
 
-RefineResult result5 = Refine.of(&quot;case-5&quot;).expect(&quot;abcde&quot;).matchAny(Strings.Startswith(&quot;a&quot;),Strings.Startswith(&quot;b&quot;)).check();
+RefineResult result5 = Refine.of("case-5").expect("abcde").matchAny(Strings.Startswith("a"),Strings.Startswith("b")).check();
 
-RefineResult result6 = Refine.of(&quot;case-6&quot;).expect(&quot;abcde&quot;).matchOne(Strings.Startswith(&quot;a&quot;),Strings.Startswith(&quot;b&quot;)).check();
+RefineResult result6 = Refine.of("case-6").expect("abcde").matchOne(Strings.Startswith("a"),Strings.Startswith("b")).check();
 
-RefineResult result7 = Refine.of(&quot;case-6&quot;).expect(&quot;abcde&quot;).matchNone(Strings.Startswith(&quot;f&quot;),Strings.Startswith(&quot;g&quot;)).check();
+RefineResult result7 = Refine.of("case-6").expect("abcde").matchNone(Strings.Startswith("f"),Strings.Startswith("g")).check();
 </code></pre>
 <h3 id="2-校验-bean"><a class="header" href="#2-校验-bean">2. 校验 Bean</a></h3>
 <p>如果参数较多且有可能重复使用校验逻辑，则应该将参数封装为 Bean。</p>
@@ -217,8 +256,8 @@ RefineResult result7 = Refine.of(&quot;case-6&quot;).expect(&quot;abcde&quot;).m
     @Override
     public RefineResult refine(Person bean) {
         return Refine.check(
-            Refine.of(&quot;Person.name&quot;).expect(name).match(Strings.NotBlank),
-            Refine.of(&quot;Person.gender&quot;).expect(gender).match(Strings.NotBlank)
+            Refine.of("Person.name").expect(name).match(Strings.NotBlank),
+            Refine.of("Person.gender").expect(gender).match(Strings.NotBlank)
         );
     }
 }
@@ -241,9 +280,9 @@ public class Criteria implements RefinedType1&lt;Criteria, CriteriaType&gt; {
 
         switch (checkType) {
             case Keyword:
-                return Refine.of(&quot;Criteria.keyword&quot;).expect(keyword).match(Strings.NotBlank).check();
+                return Refine.of("Criteria.keyword").expect(keyword).match(Strings.NotBlank).check();
             case Content:
-                return Refine.of(&quot;Criteria.content&quot;).expect(content).match(Strings.NotBlank).check();
+                return Refine.of("Criteria.content").expect(content).match(Strings.NotBlank).check();
         }
 
         throw new UnsupportedOperationException();
@@ -264,7 +303,7 @@ public class Criteria implements RefinedType1&lt;Criteria, CriteriaType&gt; {
 <pre><code class="language-java">public static Refined&lt;String&gt; IsAlpha = new Refined&lt;String&gt;() {
   @Override
   public String name() {
-    return &quot;IsAlpha&quot;;
+    return "IsAlpha";
   }
 
   @Override
@@ -277,7 +316,7 @@ public class Criteria implements RefinedType1&lt;Criteria, CriteriaType&gt; {
   }
 };
 
-RefineResult result = Refine.check(&quot;Julia&quot;, IsAlpha);
+RefineResult result = Refine.check("Julia", IsAlpha);
 </code></pre>
 
                     </main>
@@ -287,6 +326,11 @@ RefineResult result = Refine.check(&quot;Julia&quot;, IsAlpha);
                             <a rel="prev" href="../relax-utils/builder.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
+
+                            <a rel="next prefetch" href="../relax-spring-starters/index.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
                         <div style="clear: both"></div>
                     </nav>
                 </div>
@@ -296,20 +340,33 @@ RefineResult result = Refine.check(&quot;Julia&quot;, IsAlpha);
                     <a rel="prev" href="../relax-utils/builder.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
+
+                    <a rel="next prefetch" href="../relax-spring-starters/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
             </nav>
 
         </div>
 
-        <script type="text/javascript">
+
+
+
+        <script>
             window.playground_copyable = true;
         </script>
-        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
-        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
-        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+
+        <script src="../elasticlunr.min.js"></script>
+        <script src="../mark.min.js"></script>
+        <script src="../searcher.js"></script>
+
+        <script src="../clipboard.min.js"></script>
+        <script src="../highlight.js"></script>
+        <script src="../book.js"></script>
 
         <!-- Custom JS scripts -->
+
+
+    </div>
     </body>
 </html>
