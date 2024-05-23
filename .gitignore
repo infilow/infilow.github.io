@@ -2,3 +2,4 @@ book
 *.iml
 .DS_Store
 /theme/
+.idea/
